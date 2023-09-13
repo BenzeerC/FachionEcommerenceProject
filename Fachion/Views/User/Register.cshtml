@@ -1,0 +1,62 @@
+﻿@model Fachion.Models.User
+
+@{
+    ViewData["Title"] = "Register";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3 border border-primary rounded pl-5 pr-5 pb-5" style="background-color:azure">
+            <div class="text-center">
+                <h1 class=" text-info">Registration</h1>
+            </div>
+            <br />
+            <form method="post" asp-action="Register">
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" placeholder="Enter user name" class="form-control" autocomplete="off" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" placeholder="Enter email address" class="form-control" autocomplete="off" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" placeholder="Password" class="form-control" autocomplete="off" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label asp-for="ConfirmPassword" class="control-label"></label>
+                    <input asp-for="ConfirmPassword" placeholder="ConfirmPassword" class="form-control" autocomplete="off" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label asp-for="Phone" class="control-label"></label>
+                    <input asp-for="Phone" placeholder="Enter contact number" class="form-control" autocomplete="off" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="text-center">
+                    <input type="submit" value="Signup" class="btn btn-primary btn-lg"    />
+                </div>
+                <br />
+                <div class="text-center">
+                    <a asp-action="Login">Click here to Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+

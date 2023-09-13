@@ -1,0 +1,48 @@
+﻿@model Fachion.Models.User;
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="container">
+    <div class="row mt-lg-5">
+        <div class="col-4 offset-4 border border-primary rounded pl-5 pr-5 pb-5" style="background-color:azure">
+            <div class="text-center">
+                <br />
+                <h1 class=" text-info"style="background-color:dimgrey">Login</h1>
+            </div>
+            <br />
+            <form method="post" asp-action="Login">
+                
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" placeholder="Enter email address" class="form-control" autocomplete="off" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" placeholder="Password" class="form-control" autocomplete="off" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <br />
+                
+
+                <br />
+                <div class="d-grid gap-2 col-6 mx-auto" >
+                    <input type="submit" value="Login" class="btn  btn-primary " asp-action="UserIndex" />
+                </div>
+                <br />
+                <div class="text-center">
+                    <a asp-action="Register">Click here to Register</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
