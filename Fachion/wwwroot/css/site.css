@@ -1,0 +1,188 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+@media screen and (max-width:350px) {
+    .top-icons {
+        margin-left: 5px;
+    }
+
+        .top-icons i {
+            font-size: 10px;
+        }
+
+    .other-links {
+        margin-right: 10px;
+    }
+
+        .other-links i {
+            font-size: 12px;
+        }
+
+    #btn-login {
+        width: 40px;
+        height: 5vh;
+        font-size: 12px;
+    }
+
+    #btn-signup {
+        width: 50px;
+        height: 5vh;
+        font-size: 12px;
+    }
+}
+.top-navbar {
+    width: 100%;
+    height: 7vh;
+    background-color: #a9a9a926;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.top-icons {
+    margin-left: 45px;
+}
+
+.top icons i {
+    font-size: 20px;
+    color: #1A237E;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.other-links {
+    margin-right: 33px;
+}
+
+.other-links {
+    color: #1c1c50;
+    font-size: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#btn-login {
+    width: 100px;
+    border: 2px solid dimgrey;
+    color: dimgrey;
+    font-weight: bold;
+    border-radius: 5px;
+    height: 5vh;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+    #btn-login a {
+        text-decoration: none;
+        color: dimgrey;
+        transition: 0.5s ease;
+    }
+
+        #btn-login a:hover {
+            background-color: dimgrey;
+            color: white;
+        }
+
+    #btn-login:hover {
+        background-color: dimgrey;
+        color: white;
+    }
+
+#btn-signup {
+    width: 100px;
+    border: 2px solid dimgrey;
+    color: dimgrey;
+    font-weight: bold;
+    border-radius: 5px;
+    height: 5vh;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+    #btn-signup a {
+        text-decoration: none;
+        color: dimgrey;
+        transition: 0.5s ease;
+    }
+
+        #btn-signup a:hover {
+            background-color: dimgrey;
+            color: white;
+        }
+
+    #btn-signup:hover {
+        background-color:dimgrey;
+        color: white;
+    }
+
+#btn-Logout {
+    width: 100px;
+    border: 2px solid dimgrey;
+    color: dimgrey;
+    font-weight: bold;
+    border-radius: 5px;
+    height: 5vh;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+    #btn-Logout a {
+        text-decoration: none;
+        color: dimgrey;
+        transition: 0.5s ease;
+    }
+
+        #btn-Logout a:hover {
+            background-color: dimgrey;
+            color: white;
+        }
+
+    #btn-Logout:hover {
+        background-color: dimgrey;
+        color: white;
+    }
+
+@media screen and (max-width:500px) {
+    .top-icons {
+        margin-left: 30px;
+    }
+
+        .top-icons i {
+            font-size: 15px;
+        }
+
+    .other-links i {
+        font-size: 15px;
+    }
+
+    #btn-login {
+        width: 60px;
+        height: 5vh;
+    }
+    
+
+    #btn-signup {
+        width: 70px;
+        height: 5vh;
+    }
+    #btn-Logout {
+        width: 70px;
+        height: 5vh;
+    }
+}
