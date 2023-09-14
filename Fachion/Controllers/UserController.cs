@@ -32,7 +32,7 @@ namespace Fachion.Controllers
         // GET: UserController/Create
         public ActionResult Register()
         {
-            return View(crud.GetUsers());
+            return View();
         }
 
         // POST: UserController/Create
@@ -98,6 +98,14 @@ namespace Fachion.Controllers
                 return View();
             }
         }
+
+        // GET: UserController/LogOut
+        public object Logout(int id)
+        {
+            //HttpContext.Session.Clear;
+            return RedirectToAction(nameof(Login));
+        }
+
 
         // GET: UserController/Edit/5
         public ActionResult Edit(int id)

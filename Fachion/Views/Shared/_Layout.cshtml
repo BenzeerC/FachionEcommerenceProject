@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="~/Fachion.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+  
+    </head>
+        
+   
 <body>
 <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-blue 
@@ -29,6 +32,7 @@ border-bottom box-shadow mb-3" style="background-color:coral">
                         <li class="nav-item" >
                             <a class="nav-link text-white active" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link text-white active" asp-area="" asp-controller="Product" asp-action="Index">Product List</a>
                         </li>
@@ -36,21 +40,17 @@ border-bottom box-shadow mb-3" style="background-color:coral">
                             <a class="nav-link text-white" asp-area="" asp-controller="Category" asp-action="Index">Category</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Product</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="User" asp-action="UserIndex">Product</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Contact</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Contact" asp-action="ContactUs">Contact</a>
                         </li>
                        
                     </ul>
-                    
-                   
-                    
-                    
-                    
+                  
                     <div class="other-links">
                         <button id="btn-login"><a asp-area="" asp-controller="User" asp-action="Login">Login</a></button>
                         <button id="btn-signup"><a asp-area="" asp-controller="User" asp-action="Register">Signup</a></button>
@@ -59,11 +59,8 @@ border-bottom box-shadow mb-3" style="background-color:coral">
                         <i class="fa fa-user-circle" aria-hidden="true"></i>
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
 
-                        <div></div>
-                       
+                        <div></div     
                 </div>
-                   
-                    
             </div>
         </nav>
     </header>
@@ -78,9 +75,10 @@ border-bottom box-shadow mb-3" style="background-color:coral">
             &copy; 2023 - Fachion - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+     
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-</body>
+     </body>
 </html>

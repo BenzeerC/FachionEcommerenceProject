@@ -4,7 +4,47 @@
     ViewData["Title"] = "UserIndex";
 }
 
-<h1>UserIndex</h1>
+
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+
+            <div class="col-md-3">
+                <div class="card" style="width:18rem">
+                    <img src=" @Url.Content(item.Imageurl)" height="150" width="200" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </h5>
+                        <h6 class="card-title">
+                            <i class="fa fa-inr" aria-hidden="true"></i>
+
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </h6>
+                        <h7 class="card-title">
+                            @Html.DisplayFor(modelItem => item.Cname)
+                        </h7>
+
+                        <div class="card-footer" style="background-color:antiquewhite">
+                            <a href="#" class="btn btn-primary rounded ">Add to cart</a>
+                            <a href="#" class="btn btn-warning rounded ">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+        }
+    </div>
+</div>
+
+@*<h1>UserIndex</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -62,4 +102,4 @@
         </tr>
 }
     </tbody>
-</table>
+</table>*@

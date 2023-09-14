@@ -4,12 +4,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-outline-primary">Add Product</a>
+    <a asp-action="Create" class=" btn btn-outline-danger">Add Product</a>
+    
 </p>
-<table class="table">
+@*<table class="table">
     <thead>
         <tr>
             <th>
@@ -30,9 +30,64 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody>*@
+@*<div class="card">
+    <img src="@Html.DisplayNameFor(model => model.Imageurl) " class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">
+            @Html.DisplayNameFor(model => model.Name)
+        </h5>
+        <h5 class="card-title">
+            @Html.DisplayNameFor(model => model.Price)
+        </h5>
+        <h5 class="card-title">
+            @Html.DisplayNameFor(model => model.Cname)
+        </h5>
+
+    </div>
+</div>*@
+<div class="container">
+    <div class="row">
         @foreach (var item in Model)
         {
+            
+                    <div class="col-md-3">
+                        <div class="card" style="width:18rem">
+                        <img src=" @Url.Content(item.Imageurl)" height="150" width="200"  class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </h5>
+                        <h6 class="card-title">
+                            <i class="fa fa-inr" aria-hidden="true"></i>
+
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </h6>
+                        <h7 class="card-title">
+                            @Html.DisplayFor(modelItem => item.Cname)
+                        </h7>
+
+                        <div class="card-footer" style="background-color:antiquewhite">
+                            <a href="#" class="btn btn-primary rounded ">Add to cart</a>
+                            <a href="#" class="btn btn-warning rounded ">Buy Now</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            
+
+           
+
+            
+
+        }
+    </div>
+</div>
+              
+
+              @*  
+                
+            
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Id)
@@ -48,13 +103,13 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Cname)
-                </td>
-                <td>
+                </td>*@
+               @* <td>
                     @Html.ActionLink("Edit", "Edit", new {  id=item.Id }) |
                     @Html.ActionLink("Details", "Details", new { id=item.Id }) |
                     @Html.ActionLink("Delete", "Delete", new { id=item.Id })
                 </td>
-            </tr>
-        }
-    </tbody>
-</table>
+            </tr>*@
+        
+    @*</tbody>
+</table>*@
