@@ -44,9 +44,10 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<head>
+@*<head>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+</head>*@
+@*<body>*@
 <div class="container animated fadeIn">
 
 	<div class="row">
@@ -79,7 +80,7 @@
 					<div class="form-group">
 						<textarea class="form-control textarea-contact" rows="5" id="comment" name="FB" placeholder="Type Your Message/Feedback here..." required=""></textarea>
 						<br>
-						<button class="btn btn-default btn-send"> <span class="glyphicon glyphicon-send"></span> Send </button>
+						<button class="btn btn-default btn-send" asp-action="Index"> <span class="glyphicon glyphicon-send"></span> Send </button>
 					</div>
 				</form>
 			</div>
@@ -148,3 +149,4 @@
 	</div>
 
 </div>
+@*</body>*@

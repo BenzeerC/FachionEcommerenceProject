@@ -1,6 +1,7 @@
-﻿
+﻿@model IEnumerable<Fachion.Models.Contact>
+
 @{
-    Layout = null;
+    ViewData["Title"] = "Index";
 }
 
 <!DOCTYPE html>
@@ -30,8 +31,8 @@
                     </div>
                     <div class="text-center">
                         <h1>Thank You !</h1>
-                        <p>We've send the link to your inbox. Lorem ipsum dolor sit,lorem lorem </p>
-                        <button class="btn btn-outline-success">Back Home</button>
+                        <p>We've send the link to your inbox. </p>
+                    <button class="btn btn-outline-success" asp-area="" asp-controller="Home" asp-action="Index">Back Home</button>
                     </div>
                 </div>
             </div>
