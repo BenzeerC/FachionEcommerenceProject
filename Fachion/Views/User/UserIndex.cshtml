@@ -12,7 +12,7 @@
         {
 
             <div class="col-md-3">
-                <div class="card" style="width:18rem">
+                <div class="card-img-top" style="width:18rem">
                     <img src=" @Url.Content(item.Imageurl)" height="150" width="200" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -28,8 +28,8 @@
                         </h7>
 
                         <div class="card-footer" style="background-color:antiquewhite">
-                            <a href="#" class="btn btn-primary rounded ">Add to cart</a>
-                            <a href="#" class="btn btn-warning rounded ">Buy Now</a>
+                            <a href="/Cart/AddCart/@item.Id" class="btn btn-primary rounded ">Add to cart</a>
+                            <a href="/User/GetPro/@item.Id" class="btn btn-warning rounded ">View Details</a>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Fachion.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Fachion.Models;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Fachion.Controllers
 {
@@ -48,7 +49,7 @@ namespace Fachion.Controllers
                 else
                     return View();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return View(ex.Message);
             }
@@ -65,19 +66,20 @@ namespace Fachion.Controllers
         {
             try
             {
-                var model=crud.GetUserLogin(user.Email, user.Password);
-                if (model != null)
+                var model = crud.GetUserLogin(user.Email, user.Password);
+                if (model.Id>0)
                 {
                     HttpContext.Session.SetString("r_id", model.RoleId.ToString());
                     HttpContext.Session.SetString("cus_id", model.Id.ToString());
+                    HttpContext.Session.SetString("cus_name", model.Name);
                     if (model.RoleId == 1)
                     {
-                        return RedirectToAction(nameof(Index));
+                        return this. RedirectToAction("Index","Product");
                     }
-                    else if (model.RoleId == 2)
+                    else if (model.RoleId == 0)
                     {
-                        return this. RedirectToAction(nameof(UserIndex));
-                        
+                        return RedirectToAction(nameof(UserIndex));
+
                     }
                     else
                     {
@@ -99,18 +101,16 @@ namespace Fachion.Controllers
             }
         }
 
-        // GET: UserController/LogOut
-        public object Logout(int id)
+        // GET: UserController/Edit/5
+        public ActionResult Logout(int id)
         {
-            //HttpContext.Session.Clear;
+            HttpContext.Session.Clear();
             return RedirectToAction(nameof(Login));
         }
 
-
-        // GET: UserController/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult GetPro(int id)
         {
-            return View();
+           return View(procrud.GetProductById(id));
         }
 
         // POST: UserController/Edit/5

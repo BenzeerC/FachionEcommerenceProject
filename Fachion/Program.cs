@@ -2,10 +2,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddSession(session =>
 {
-    session.IdleTimeout = TimeSpan.FromSeconds(20);
+    session.IdleTimeout = TimeSpan.FromSeconds(10);
     session.Cookie.IsEssential = true;
 });
 

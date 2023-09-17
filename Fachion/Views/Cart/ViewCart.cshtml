@@ -1,0 +1,130 @@
+﻿@model IEnumerable<Fachion.Models.Product>
+
+@{
+    ViewData["Title"] = "ViewCart";
+}
+
+<!DOCTYPE html>
+
+@*<html>*@
+@*<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ViewCart</title>
+</head>*@
+@*<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Imageurl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Qty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CartId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Imageurl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CartId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>
+*@
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+
+            <div class="col-md-3">
+                <div class="card" style="width:18rem">
+                    <img src=" @Url.Content(item.Imageurl)" height="150" width="200" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </h5>
+                        <h6 class="card-title">
+                            <i class="fa fa-inr" aria-hidden="true"></i>
+
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </h6>
+                        <h7 class="card-title">
+                            @Html.DisplayFor(modelItem => item.Cname)
+                        </h7>
+                       @* <h7 class="card-title">
+                            @Html.DisplayFor(modelItem => item.Qty)
+                        </h7>
+                        <h7 class="card-title">
+                            @Html.DisplayFor(modelItem => item.CartId)
+                        </h7>*@
+
+                        <div class="card-footer" style="background-color:antiquewhite">
+                            <a href="/Cart/RemoveCart/@item.Id" class="btn btn-primary rounded ">Add to cart</a>
+                            <a href="#" class="btn btn-warning rounded ">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+        }
+    </div>
+</div>

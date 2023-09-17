@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Xml.Linq;
 
 namespace Fachion.Models
@@ -19,5 +20,9 @@ namespace Fachion.Models
 
         [Display(Name = "Category name")]
         public string Cname { get; set; }
+        [NotMapped]
+        public int Qty { get; set; }
+        [NotMapped]
+        public int CartId { get; set; }
     }
 }

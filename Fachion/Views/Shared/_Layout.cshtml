@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http;
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -14,7 +16,11 @@
         
    
 <body>
+    
+    
 <header>
+   
+    
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-blue 
 border-bottom box-shadow mb-3" style="background-color:coral">
             <div class="container-fluid">
@@ -32,34 +38,65 @@ border-bottom box-shadow mb-3" style="background-color:coral">
                         <li class="nav-item" >
                             <a class="nav-link text-white active" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link text-white active" asp-area="" asp-controller="Product" asp-action="Index">Product List</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Category" asp-action="Index">Category</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="User" asp-action="UserIndex">Product</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Aboutus">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Contact" asp-action="ContactUs">Contact</a>
-                        </li>
+                        @if (httpContextAccessor.HttpContext.Session.GetString("r_id") == "1")
+                        {
+
+                            <li class="nav-item">
+                                <a class="nav-link text-white active" asp-area="" asp-controller="Product" asp-action="Index">Product List</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Category" asp-action="Index">Category</a>
+                            </li>
+                        }
                        
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Aboutus">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Contact" asp-action="ContactUs">Contact</a>
+                            </li>
+                        @if (httpContextAccessor.HttpContext.Session.GetString("r_id") == "0")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="User" asp-action="UserIndex">Product</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fa fa-shopping-cart" aria-hidden="true"></a>
+                            </li>
+                        }
+                       
+                        
+
                     </ul>
                   
-                    <div class="other-links">
-                        <button id="btn-login"><a asp-area="" asp-controller="User" asp-action="Login">Login</a></button>
-                        <button id="btn-signup"><a asp-area="" asp-controller="User" asp-action="Register">Signup</a></button>
+                    <div class="navbar-nav ml-auto">
+                    <ul class="navbar-nav flex-grow-1">
+                        @if (string.IsNullOrEmpty(httpContextAccessor.HttpContext.Session.GetString("cus_id")))
+                        {
+                            <li class="nav-item">
+                            <button id="btn-login"><a  asp-area="" asp-controller="User" asp-action="Login">Login</a></button>
+                            </li>
+                            <li class="nav-item">
+                            <button id="btn-signup"><a asp-area="" asp-controller="User" asp-action="Register">Signup</a></button>
+                            </li>
+                        }
+                       @if (!string.IsNullOrEmpty(httpContextAccessor.HttpContext.Session.GetString("cus_id")))
+                         {
+                             <li class="nav-item">
                         
-                        <button id="btn-Logout"><a href="#">Logout</a></button>
-                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                              <i class="nav-link fa fa-user-circle" aria-hidden="true">Welcome @httpContextAccessor.HttpContext.Session.GetString("cus_name")</i>
+                        @*<button id="btn-Logout"><a href="/User/Logout">Logout</a></button>*@
+                        </li>
+                       @* <li class="nav-item">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        </li>*@
 
-                        <div></div     
+                        <li class="nav-item">
+                            <button id="btn-Logout"><a  href="/User/Login">Logout</a></button>
+                            </li>
+                         }
+                        <div></div>   
+                        </ul>
                 </div>
             </div>
         </nav>
